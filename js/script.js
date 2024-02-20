@@ -12,24 +12,24 @@ console.log(ticketPrice);
 
 // calcolo solo sconti bambino e over 65
 const childDiscount = (ticketPrice * 20) / 100; 
-const overDiscount = (ticketPrice *40) / 100;
+const seniorDiscount = (ticketPrice *40) / 100;
 
 // sottrazione sconti
 const childTicket = ticketPrice - childDiscount;
-const overTicket = ticketPrice - overDiscount;
+const seniorTicket = ticketPrice - seniorDiscount;
 
 
 let message;
 
 if(age < 18){
-  console.log(('Sei minorenne, quindi con lo sconto del 20% il biglietto costa: €') + childTicket);
-  // message = 'Sei minorenne, quindi con lo sconto del 20% il biglietto costa:' 
+  // console.log(('Sei minorenne, quindi con lo sconto del 20% il biglietto costa: €') + childTicket);
+  message = (('Sei minorenne, quindi con lo sconto del 20% il biglietto costa: €') + childTicket); 
 } else if (age >= 65){
-  console.log(('Sei over 65, quindi con lo sconto del 40% il biglietto costa: €') + overTicket);
-  // message = 'Sei over 65, quindi con lo sconto del 40% il biglietto costa:'
+  // console.log(('Sei over 65, quindi con lo sconto del 40% il biglietto costa: €') + seniorTicket);
+  message = (('Sei over 65, quindi con lo sconto del 40% il biglietto costa: €') + seniorTicket);
 } else {
-  console.log(('Senza nessuno sconto il biglietto costa: €') + ticketPrice);
-  // message = 'Senza nessuno sconto il biglietto costa:'
+  // console.log(('Senza nessuno sconto il biglietto costa: €') + ticketPrice);
+  message = (('Senza nessuno sconto il biglietto costa: €') + ticketPrice);
 }
 
 document.getElementById('output').innerHTML = message;
