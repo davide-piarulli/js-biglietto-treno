@@ -1,9 +1,8 @@
+// chiedo km ed età
 const km = prompt('Quanti km dovrai percorrere?');
-console.log(km);
-
 const age = prompt('Quanti anni hai?')
-console.log(age);
 
+// fisso il prezzo al km
 const priceKm = 0.21 ;
 
 // calcolo biglietto generico
@@ -18,18 +17,20 @@ const seniorDiscount = (ticketPrice *40) / 100;
 const childTicket = ticketPrice - childDiscount;
 const seniorTicket = ticketPrice - seniorDiscount;
 
+// creo nuove variabili con prezzi a 2 decimali
+const roundedchildTicket = childTicket.toFixed(2);
+const roundedseniorTicket = seniorTicket.toFixed(2);
+const roundedTicket = ticketPrice.toFixed(2);
 
+// inizializzo message
 let message;
 
 if(age < 18){
-  // console.log(('Sei minorenne, quindi con lo sconto del 20% il biglietto costa: €') + childTicket);
-  message = (('Sei minorenne, quindi con lo sconto del 20% il biglietto costa: €') + childTicket); 
+  message = (('Sei minorenne, quindi con lo sconto del 20% il biglietto costa: €') + roundedchildTicket); 
 } else if (age >= 65){
-  // console.log(('Sei over 65, quindi con lo sconto del 40% il biglietto costa: €') + seniorTicket);
-  message = (('Sei over 65, quindi con lo sconto del 40% il biglietto costa: €') + seniorTicket);
+  message = (('Sei over 65, quindi con lo sconto del 40% il biglietto costa: €') + roundedseniorTicket);
 } else {
-  // console.log(('Senza nessuno sconto il biglietto costa: €') + ticketPrice);
-  message = (('Senza nessuno sconto il biglietto costa: €') + ticketPrice);
+  message = (('Senza nessuno sconto il biglietto costa: €') + roundedTicket);
 }
 
 document.getElementById('output').innerHTML = message;
